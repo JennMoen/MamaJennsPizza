@@ -1,0 +1,16 @@
+﻿<h2>Pizza details</h2>
+
+<h4>{{controller.pizza.name}}</h4>
+<h5>{{controller.pizza.toppings}}</h5>
+<h5>{{controller.pizza.price | currency}}</h5>
+
+<h3>Edit your pizza's details</h3>
+<form ng-submit="controller.editPizza()">
+    <input type="text" placeholder="Pizza name" ng-model="controller.pizza.name" />
+    <input type="text" placeholder="Pizza toppings" ng-model="controller.pizza.toppings" />
+    <input type="text" placeholder="Pizza price" ng-model="controller.pizza.price" />
+    <input type="submit" value="Edit that pizza!" />
+</form>
+
+<h3>Are you sick of this pizza?  Delete it.</h3>
+<button ng-click="controller.deletePizza()">Get this pizza outta here</button>

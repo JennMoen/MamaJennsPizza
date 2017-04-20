@@ -1,0 +1,16 @@
+<h2>Home</h2>
+<p>
+    {{controller.message}}
+</p>
+
+<div ng-repeat="pizza in controller.pizzas" ui-sref="details({id: pizza.id})">
+    {{pizza.name}} with {{pizza.toppings}} costs {{pizza.price | currency}}
+</div>
+
+<h3>Add a new tasty pizza to your list!</h3>
+<form ng-submit="controller.addPizza()">
+    <input type="text" placeholder="Pizza name" ng-model="controller.pizza.name" />
+    <input type="text" placeholder="Pizza toppings" ng-model="controller.pizza.toppings" />
+    <input type="text" placeholder="Pizza price" ng-model="controller.pizza.price" />
+    <input type="submit" value="Add my pizza!" />
+</form>
